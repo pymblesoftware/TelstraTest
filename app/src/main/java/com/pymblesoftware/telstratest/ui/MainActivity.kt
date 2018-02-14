@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
         val rows = data.rows
         rowData = rows
 
+
+        val bar = getSupportActionBar()
+        bar!!.title = title
+
+        // Debug logging
         for(curr in rows) {
             val title = curr["title"]
             val desc = curr["description"]
