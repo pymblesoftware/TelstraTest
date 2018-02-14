@@ -1,5 +1,7 @@
 package com.pymblesoftware.telstratest.datamodel
 
+import com.google.gson.internal.LinkedTreeMap
+
 /**
  * Created by regan on 14/2/18.
  */
@@ -89,6 +91,16 @@ package com.pymblesoftware.telstratest.datamodel
  *
  */
 
-data class TitleData ( var title : String, var rows : Any ) {
+//data class RowData(
+//
+//) {
+//
+//}
+
+
+
+data class TitleData (
+        var title : String,
+        var rows : ArrayList<LinkedTreeMap<String,Any>> ) {
 
 }
