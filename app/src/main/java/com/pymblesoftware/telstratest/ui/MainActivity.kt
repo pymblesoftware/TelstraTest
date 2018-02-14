@@ -16,6 +16,7 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import com.google.gson.internal.LinkedTreeMap
+import com.squareup.picasso.Picasso
 
 
 class MainActivity : AppCompatActivity() {
@@ -94,7 +95,12 @@ class MainActivity : AppCompatActivity() {
                 val curr = rowData!![position]
                 curr["title"]?.let { vh.label.text = curr["title"] as String }
                 curr["description"]?.let { vh.description.text = curr["description"] as String }
-
+                curr["imageHref"]?.let {
+                    val url = curr["imageHref"] as String
+//                    Picasso.with(vh.image.context).load(url).into(vh.image)
+                    Picasso.with(vh.image.context).load(url).into(vh.image)
+                    vh.image.invalidate()
+                }
             }
 
             return view
